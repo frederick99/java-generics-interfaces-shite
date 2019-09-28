@@ -1,7 +1,7 @@
 import java.util.Iterator;
 
 public class GLIterator<I> implements Iterator<I> {
-    private GenericList<I>.Node<I> curr;
+    private GenericList.Node<I> curr;
 
     public GLIterator(GenericList<I> list) {
         curr = list.head;

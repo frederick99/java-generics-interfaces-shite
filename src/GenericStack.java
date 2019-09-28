@@ -15,24 +15,8 @@ public class GenericStack<I> extends GenericList<I> implements CreateIterator {
     }
 
     @Override
-    void print() {
-        StringBuilder sb = new StringBuilder("[");
-        Node<I> curr = head;
-        while (curr != null) {
-            sb.append(curr.data.toString());
-            sb.append(",");
-            curr = curr.next;
-        }
-        sb.append("]");
-        System.out.println(sb.toString());
-    }
-
-    @Override
     void add(I data) {
-        Node<I> node = new Node<I>();
-        node.data = data;
-        node.next = head;
-        head = node;
+        head = new Node<I>(data, head);
         length++;
     }
 
@@ -48,7 +32,7 @@ public class GenericStack<I> extends GenericList<I> implements CreateIterator {
     }
 
     @Override
-    public Iterator createIterator() {
+    public Iterator<I> createIterator() {
         return new GLIterator<I>(this);
     }
 }
