@@ -17,5 +17,7 @@ public class Main {
         while(iter.hasNext()) {
             System.out.println(iter.next());
         }
+
+        // TODO: add tests for queue
     }
 }

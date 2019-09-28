@@ -7,9 +7,12 @@ abstract class GenericList<I> {
     void print() {
         StringBuilder sb = new StringBuilder("[");
         Iterator iterator = new GLIterator<I>(this);
-        while (iterator.hasNext()) {
+        // tell me if there is a better way to do this
+        if (iterator.hasNext())
             sb.append(iterator.next());
-            sb.append(iterator.hasNext() ? ", ": "");
+        while (iterator.hasNext()) {
+            sb.append(", ");
+            sb.append(iterator.next());
         }
         sb.append("]");
         System.out.println(sb.toString());
